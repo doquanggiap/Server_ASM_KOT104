@@ -5,6 +5,9 @@ var router = express.Router();
 var UserCtrl = require('../controller/UserController');
 var CategoryCtrl = require('../controller/CategoryController');
 var ProductCtrl = require('../controller/ProductController');
+var BillCtrl = require('../controller/BillController');
+var BillDetailCtrl = require('../controller/BillDetailController');
+
 
 // người dùng
 router.post('/register', UserCtrl.DangKy)
@@ -19,6 +22,12 @@ router.get('/categories', CategoryCtrl.layDanhSach)
 router.post('/product', ProductCtrl.them)
 router.get('/products', ProductCtrl.layDanhSach)
 router.get('/get-product-by-id/:id', ProductCtrl.laySanPhamTheoId)
+
+//hóa đơn
+router.post('/bill', BillCtrl.them)
+
+// chi tiết hóa đơn
+router.post('/bill-detail', BillDetailCtrl.them)
 
 
 
